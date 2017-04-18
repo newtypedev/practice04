@@ -23,6 +23,13 @@ public class BookShop {
 		int num = scanner.nextInt();
 		scanner.close();
 		
+		if(books[num].getStateCode()==1){
+			books[num].rent();
+		}
+		else if(books[num].getBookNo()==0){
+			System.out.print(books[num].getTitle()+"이 이미 대여중입니다");
+			
+		}
 		// (1) 입력된 번호에 맞는 책을 찾아 대여 되었음(상태코드=0)을 체크 합니다.
 		
 		
@@ -32,7 +39,10 @@ public class BookShop {
 	}
 	
 	private static void displayBookInfo( Book[] books ) {
-
+		
+		
+		for(int i=0;i<books.length;i++){
+			books[i].print();	
 	}
 
-}
+}}
